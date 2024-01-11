@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.ChongwupeiyangDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.ChongwupeiyangEntity" id="chongwupeiyangMap">
+        <result property="chongwuzhonglei" column="chongwuzhonglei"/>
+        <result property="peiyangkecheng" column="peiyangkecheng"/>
+        <result property="tupian" column="tupian"/>
+        <result property="kaishishijian" column="kaishishijian"/>
+        <result property="jiage" column="jiage"/>
+        <result property="peiyangzhouqi" column="peiyangzhouqi"/>
+        <result property="peiyangneirong" column="peiyangneirong"/>
+        <result property="peiyangshihao" column="peiyangshihao"/>
+        <result property="peiyangshiming" column="peiyangshiming"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.ChongwupeiyangVO" >
+		SELECT * FROM chongwupeiyang  chongwupeiyang         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.ChongwupeiyangVO" >
+		SELECT  chongwupeiyang.* FROM chongwupeiyang  chongwupeiyang 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.ChongwupeiyangView" >
+
+		SELECT  chongwupeiyang.* FROM chongwupeiyang  chongwupeiyang 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.ChongwupeiyangView" >
+		SELECT * FROM chongwupeiyang  chongwupeiyang <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
